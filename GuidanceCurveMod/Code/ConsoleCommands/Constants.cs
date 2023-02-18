@@ -1,4 +1,7 @@
-﻿namespace EchKode.PBMods.GuidanceCurve.ConsoleCommands
+﻿// Copyright (c) 2023 EchKode
+// SPDX-License-Identifier: BSD-3-Clause
+
+namespace EchKode.PBMods.GuidanceCurve.ConsoleCommands
 {
 	static class Constants
 	{
