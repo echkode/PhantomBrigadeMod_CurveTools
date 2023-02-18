@@ -1,0 +1,4 @@
+developerMode: true
+debugOptions: true
+combatScenarioLoaded: true
+combatScenarioLoadedKey: debug_empty_missiles

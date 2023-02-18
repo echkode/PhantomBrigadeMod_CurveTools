@@ -1,0 +1,12 @@
+id: com.echkode.pbmods.guidancecurve
+ver: 1
+includesConfigOverrides: true
+includesConfigEdits: false
+includesLibraries: true
+includesTextures: false
+includesLocalizationEdits: false
+includesLocalizations: false
+gameVersionMin:
+gameVersionMax:
+name: Guidance Curve
+desc: Replace missile launcher guidance curves
