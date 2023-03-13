@@ -111,7 +111,11 @@ In the code for the mod is a function to batch load custom curves. The function 
 
 Only the control points for the hermite splines are stored when animation curves are serialized to YAML. I'm not that good at mentally visualizing the full curve from these control points so I built a simple tool in the Unity Editor to let me see and change the curve.
 
-The project is a barebones 3D Unity project. It adds an entry to the Window menu named "View Curve". Going to Window > View Curve will bring up a standalone window with a few sections. The first section you should look at is "Original Curve Paths". Expand this out and change the directories to match where you've stored your curves. I use the `subst` command from a command prompt to create shortcut drives to my folders.
+The project is a barebones 3D Unity project. It adds an entry to the Window menu named "View Curve". Going to Window > View Curve will bring up a standalone window with a few sections.
+
+![view curve window with guidance section expanded](Screenshots/Curve_Editor.png)
+
+The first section you should look at is "Original Curve Paths". Expand this out and change the directories to match where you've stored your curves. I use the `subst` command from a command prompt to create shortcut drives to my folders.
 
 The next section you should examine is the "Save Paths" section. Here's where you'll set the folder to save modified curves to. I save my modified curves to a different folder than the stock curves so I don't have to keep extracting the stock curves.
 
