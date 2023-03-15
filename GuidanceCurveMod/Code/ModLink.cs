@@ -12,12 +12,11 @@ using UnityEngine;
 
 namespace EchKode.PBMods.GuidanceCurve
 {
-	public class ModLink : PhantomBrigade.Mods.ModLink
+	public partial class ModLink : PhantomBrigade.Mods.ModLink
 	{
 		internal static int modIndex;
 		internal static string modId;
 		internal static string modPath;
-		internal static string guidanceCurveDirectory;
 
 		public override void OnLoad(Harmony harmonyInstance)
 		{
@@ -29,7 +28,8 @@ namespace EchKode.PBMods.GuidanceCurve
 			modIndex = PBModManager.loadedMods.Count;
 			modId = metadata.id;
 			modPath = metadata.path;
-			guidanceCurveDirectory = Path.Combine(modPath, "Curves\\Guidance");
+
+			LoadSettings();
 
 			var patchAssembly = typeof(ModLink).Assembly;
 			Debug.LogFormat(

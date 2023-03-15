@@ -59,9 +59,11 @@
     <Compile Include="ConsoleCommands\ConsoleExtensions.cs" />
     <Compile Include="ConsoleCommands\Constants.cs" />
     <Compile Include="ConsoleCommands\Console.cs" />
+    <Compile Include="ConsoleCommands\WeaponManipulator.cs" />
     <Compile Include="CurveExtractor.cs" />
     <Compile Include="ModLink.cs" />
     <Compile Include="DataMultiLinkerSubsystem.cs" />
+    <Compile Include="ModSettings.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ConsoleCommands\GuidanceManipulator.cs" />
   </ItemGroup>

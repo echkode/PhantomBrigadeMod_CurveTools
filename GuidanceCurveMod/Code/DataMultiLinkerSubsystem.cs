@@ -31,7 +31,7 @@ namespace EchKode.PBMods.GuidanceCurve
 
 		internal static void UpdateGuidanceCurves()
 		{
-			var curveDirectoryPath = ModLink.guidanceCurveDirectory;
+			var curveDirectoryPath = ModLink.Settings.guidanceCurveDirectory;
 			if (!Directory.Exists(curveDirectoryPath))
 			{
 				return;

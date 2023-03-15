@@ -45,7 +45,7 @@ namespace EchKode.PBMods.GuidanceCurve.ConsoleCommands
 		{
 			try
 			{
-				var outputDirectory = new DirectoryInfo(ModLink.guidanceCurveDirectory);
+				var outputDirectory = new DirectoryInfo(ModLink.Settings.guidanceCurveDirectory);
 				var extracted = CurveExtractor.ExtractAll(outputDirectory);
 				if (extracted.Count != 0)
 				{
@@ -144,7 +144,7 @@ namespace EchKode.PBMods.GuidanceCurve.ConsoleCommands
 		}
 
 		static void ReplaceGuidanceCurve(string unitID, bool primary, string inputType) =>
-			ReplaceGuidanceCurve(unitID, primary, inputType, ModLink.guidanceCurveDirectory);
+			ReplaceGuidanceCurve(unitID, primary, inputType, ModLink.Settings.guidanceCurveDirectory);
 
 		static void ReplaceGuidanceCurve(string unitID, bool primary, string inputType, string curveSourcePath)
 		{

@@ -84,5 +84,46 @@ namespace EchKode.PBMods.GuidanceCurve
 			UtilitiesYAML.SaveToFile(pathName, ib.curveSerialized);
 			return (true, pathName);
 		}
+
+		internal static List<(string Key, string Path)> ExtractAllDamageFalloff(DirectoryInfo outputDirectory)
+		{
+			if (!outputDirectory.Exists)
+			{
+				throw new System.ArgumentException("Output directory should exist: " + outputDirectory.FullName, nameof(outputDirectory));
+			}
+
+			var subsystems = new List<(string, string)>();
+			foreach (var kvp in PBDataMultiLinkerSubsystem.data)
+			{
+				if (kvp.Value.projectileProcessed == null)
+				{
+					continue;
+				}
+				if (kvp.Value.projectileProcessed.falloff == null)
+				{
+					continue;
+				}
+				var (ok, p) = SaveCurve(kvp.Key, kvp.Value.projectileProcessed.falloff, outputDirectory);
+				if (!ok)
+				{
+					continue;
+				}
+				subsystems.Add((kvp.Key, p));
+			}
+
+			return subsystems;
+		}
+
+		static (bool, string) SaveCurve(string key, DataBlockProjectileDamageFalloff falloff, DirectoryInfo outputDirectory)
+		{
+			falloff.OnBeforeSerialization();
+			if (falloff.curveSerialized == null)
+			{
+				return (false, "");
+			}
+			var pathName = Path.Combine(outputDirectory.FullName, key + ".yaml");
+			UtilitiesYAML.SaveToFile(pathName, falloff.curveSerialized);
+			return (true, pathName);
+		}
 	}
 }

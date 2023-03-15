@@ -20,6 +20,7 @@ namespace EchKode.PBMods.GuidanceCurve.ConsoleCommands
 		{
 			CombatInspector.Commands,
 			GuidanceManipulator.Commands,
+			WeaponManipulator.Commands,
 		};
 
 		internal static void RegisterCommands()
